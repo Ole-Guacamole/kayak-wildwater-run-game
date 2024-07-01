@@ -1,4 +1,4 @@
-class capsizedKayaker {
+class CapsizedKayaker {
     constructor (gameScreen) {
         this.gameScreen = gameScreen;
         this.left = Math.floor(Math.random() * 300 + 70);

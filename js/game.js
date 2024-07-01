@@ -94,7 +94,7 @@ class Game {
 // Create a new capsized Kayaker based on a random probability
     // when there is no other capsized Kayaker on the screen
     if (Math.random() > 0.98 && this.capsizedKayakers.length < 1) {
-      this.capsizedKayakers.push(new this.CapsizedKayaker(this.gameScreen));
+      this.capsizedKayakers.push(new CapsizedKayaker(this.gameScreen));
     }
 
 
