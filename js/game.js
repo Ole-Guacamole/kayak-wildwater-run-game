@@ -14,6 +14,7 @@ class Game {
     this.height = 800;
     this.width = 1000;
     this.obstacles = [];
+    this.capsizedKayakers = [];
     this.score = 0;
     this.lives = 3;
     this.gameIsOver = false;
@@ -89,6 +90,15 @@ class Game {
     if (Math.random() > 0.98 && this.obstacles.length < 1) {
       this.obstacles.push(new Obstacle(this.gameScreen));
     }
+
+// Create a new capsized Kayaker based on a random probability
+    // when there is no other capsized Kayaker on the screen
+    if (Math.random() > 0.98 && this.capsizedKayakers.length < 1) {
+      this.capsizedKayakers.push(new this.CapsizedKayaker(this.gameScreen));
+    }
+
+
+
   }
 
   // Create a new method responsible for ending the game

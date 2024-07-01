@@ -1,4 +1,4 @@
-class Obstacle {
+class capsizedKayaker {
     constructor (gameScreen) {
         this.gameScreen = gameScreen;
         this.left = Math.floor(Math.random() * 300 + 70);
