@@ -1,7 +1,7 @@
 class CapsizedKayaker {
     constructor (gameScreen) {
         this.gameScreen = gameScreen;
-        this.left = Math.floor(Math.random() * 300 + 70);
+        this.left = Math.floor(Math.random() * 1100 + 70);
         this.top = 0;
         this.width = 100;
         this.height = 219;
