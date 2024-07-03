@@ -30,7 +30,7 @@ body {
   padding: 20px 0px;
   overflow: hidden;
   position: relative;
-  background-image: url(../images/river3.png);
+  background-image: url(../images/river2.png);
   background-size: cover;
   animation: slide 8s linear infinite;
   border-radius: 5px;

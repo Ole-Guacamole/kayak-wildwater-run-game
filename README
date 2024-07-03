@@ -1,0 +1,29 @@
+![](https://i.imgur.com/1QgrNNw.png)
+
+# Kayak Rescue Game
+
+## Introduction 
+
+I created this game as a project in my third week of an Ironhack Coding Bootcamp in June 2024 in Berlin. The goal was to improve my JavaScript Skills and consolidate what we learned before, with a focus on JavaScript classes, object based programming and DOM manipulation. As a basis, I used the existing Ironhack Lab [Race Car](https://github.com/ironhack-labs/lab-dom-race-car) and modified and enhanced the code to meet my needs.
+
+## The Game
+
+The idea of the game is that you are a kayaker paddling on a river. The goal is to help other Kayakers who are capsized and need to be rescued. To make the job more difficult, there are sharks and swirls crowding the water, and upon collision, they will reduce the players lives. Once they are down to zero, it's GAME OVER. If you manage to rescue 6 Kayakers before that, you win.
+
+## Setup
+
+My repository is public on GitHub; if you want to show the code on your desktop, here is how you can:
+
+-  `git clone https://github.com/Ole-Guacamole/kayak-wildwater-run-game` in your terminal
+-  `cd kayak-wildwater-run-game`
+-  `open index.html`
+
+Or just play it in your Browser via: >> Link is missing <<
+
+## Team Members
+
+This was an individual exercise, which I completed with help from my lead teacher, [Omar Dieh](https://www.linkedin.com/in/omardieh/?originalSubdomain=de) and some advice from fellow students from the Ironhack Jun 2024 Berlin Cohort.
+
+## Image Sources
+
+I created most of the images for the player and the obstacles myself via Adobe Photoshop. For the shark, I used an open-source image from [Pixabay](https://pixabay.com/illustrations/shark-sea-marine-life-clip-art-7265786/), which I modified and converted into a .gif. Thanks to [Hakman_Jones](https://pixabay.com/users/hakman_jones-27097262/). The basis for the background was a picture, which ChatG
