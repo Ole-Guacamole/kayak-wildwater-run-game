@@ -7,6 +7,9 @@ class Obstacle {
     this.height = 57;
     this.element = document.createElement("img");
 
+    this.directions = ["left", "right","straight"];
+    this.direction = this.directions[Math.floor(Math.random() * this.directions.length)];
+
     this.element.src = "./images/shark-7265786_640.gif";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
@@ -17,13 +20,25 @@ class Obstacle {
     this.gameScreen.appendChild(this.element);
   }
 
-  updatePostion() {
+  updatePosition() {
     this.element.style.left = `${this.left}px`;
     this.element.style.top = `${this.top}px`;
   }
 
   move() {
     this.top += 2;
-    this.updatePostion();
+    
+    if (this.direction === "right") {
+      this.left += 1;
+      this.updatePosition();
+    } else if (this.direction === "left") {
+      this.left -= 1;
+      this.updatePosition();
+    } else if (this.direction === "straight") {
+      this.left = 0;
+      this.updatePosition();
+    }
+
+    this.updatePosition();
   }
 }

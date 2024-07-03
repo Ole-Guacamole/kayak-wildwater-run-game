@@ -21,6 +21,7 @@ body {
   color: white;
   padding: 10px 40px;
   border-radius: 5px;
+  margin: 0 15px ;
 }
 
 #game-screen {
@@ -32,6 +33,7 @@ body {
   background-image: url(../images/river3.png);
   background-size: cover;
   animation: slide 8s linear infinite;
+  border-radius: 5px;
 }
 
 @keyframes slide {
@@ -48,6 +50,14 @@ body {
 
 #game-end {
   display: none;
+}
+
+#game-end-victory {
+  display: none;
+}
+
+#game-over-heading {
+color: #ed00f0;
 }
 
 .game-intro p {

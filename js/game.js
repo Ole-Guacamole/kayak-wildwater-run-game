@@ -3,6 +3,7 @@ class Game {
     this.startScreen = document.getElementById("game-intro");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
+    this.gameEndScreenVictory = document.getElementById("game-end-victory");
     this.player = new Player(
       this.gameScreen,
       200,
@@ -44,22 +45,16 @@ class Game {
     }
   }
 
-  endGame() {
-    this.player.element.remove;
-    this.obstacles.forEach((obstacle) => obstacle.element.remove());
-    this.capsizedKayakers.forEach((kayaker) => kayaker.element.remove());
-    this.swirls.forEach((swirl) => swirl.element.remove());
-
-    this.gameIsOver = true;
-    this.gameScreen.style.display = "none";
-    this.gameEndScreen.style.display = "block";
-  }
+  
 
   update() {
     this.player.move();
 
     const scoreDisplay = document.getElementById("score");
     const livesDisplay = document.getElementById("lives");
+
+    
+  
   
 
     // Check for collision (if yes decrease lives) => and if an obstacle is still on the screen
@@ -113,7 +108,7 @@ class Game {
      
         i--;
       } // If the swirl is off the screen (at the bottom)
-      else if (swirl.top > this.height || swirl.left > this.width) {
+      else if (swirl.top > this.height || swirl.left > this.width || swirl.top < 0 || swirl.left < 0) {
        
         // Remove the swirl from the DOM
         swirl.element.remove();
@@ -147,7 +142,7 @@ class Game {
         kayaker.element.remove();
         // Remove capsizedKayaker object from the array
         this.capsizedKayakers.splice(i, 1);
-        
+    
         // decrease score by 1
         this.score--;
         scoreDisplay.innerText = `${this.score}`;
@@ -157,14 +152,11 @@ class Game {
       }
     }
 
-    // If the lives are 0, end the game
-    if (this.lives === 0) {
-      this.endGame();
-    }
+  
 
     // Create a new obstacle based on a random probability
     // when there is no other obstacles on the screen
-    if (Math.random() > 0.98 && this.obstacles.length < 2) {
+    if (Math.random() > 0.98 && this.obstacles.length < 4) {
       this.obstacles.push(new Obstacle(this.gameScreen));
     }
 
@@ -179,19 +171,38 @@ class Game {
       this.swirls.push(new Swirl(this.gameScreen));
     }
 
-
+  // If the lives are 0, end the game
+  if (this.lives === 0) {
+    this.endGameReason = "outOfLives"; // Set the reason for game end
+    this.endGame();
+    
   }
 
-  // method responsible for ending the game
+  if (this.score === 6) {
+    this.endGameReason = "reachedScore";
+    this.endGame();
+    
+    
+  }
+  }
+
+
   endGame() {
+    
+  
+    
     this.player.element.remove();
     this.obstacles.forEach((obstacle) => obstacle.element.remove());
+    this.obstacles.forEach((obstacle) => obstacle.element.remove());
+    this.capsizedKayakers.forEach((kayaker) => kayaker.element.remove());
+    this.swirls.forEach((swirl) => swirl.element.remove());
 
     this.gameIsOver = true;
 
     // Hide game screen
     this.gameScreen.style.display = "none";
     // Show end game screen
-    this.gameEndScreen.style.display = "block";
+    if (this.endGameReason === "reachedScore") {this.gameEndScreenVictory.style.display = "block"};
+    if (this.endGameReason === "outOfLives") {this.gameEndScreen.style.display = "block"};
   }
 }

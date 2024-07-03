@@ -10,7 +10,9 @@ class Player {
             1: moving horizontally to the right
             -1: moving horizontally to the left */
        this.directionX = 0;
-       this.directionY = 0; // veritcal movement
+       this.directionY = +1; // veritcal movement
+
+    
        this.element = document.createElement("img");
 
        this.element.src = imgSrc;
@@ -25,9 +27,17 @@ class Player {
     }
 
     move () {
+        
+        // Prevent the Player form moving too fast, 3 is max
+        if (this.directionX > 3) {this.directionX = 3};
+        if (this.directionY > 3) {this.directionX = 3};
+        if (this.directionX < -3) {this.directionX = -3};
+        if (this.directionY < -3) {this.directionY = -3};
+        
         this.left += this.directionX;
         this.top += this.directionY;
 
+        // Prevent the Player from getting out of the Game Screen.
         if (this.left < 10) {
             this.left = 10;
         }
