@@ -27,19 +27,15 @@ class Swirl {
     if (this.direction2 === "rightdown") {
       this.top += 1;
       this.left += 1;
-      this.updatePosition();
     } else if (this.direction2 === "leftdown") {
       this.top += 1;
       this.left -= 1;
-      this.updatePosition();
     } else if (this.direction2 === "rightup") {
       this.top -= 1;
       this.left += 1;
-      this.updatePosition();
     } else if (this.direction2 === "leftup") {
       this.top -= 1;
       this.left -= 1;
-      this.updatePosition();
     }
 
     this.updatePosition();
