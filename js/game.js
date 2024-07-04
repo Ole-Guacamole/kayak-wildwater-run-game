@@ -75,7 +75,7 @@ class Game {
      
         i--;
       } // If the obstacle is off the screen (at the bottom)
-      else if (obstacle.top > this.height) {
+      else if (obstacle.top > this.height || obstacle.left > this.width || obstacle.left < 0) {
         // Increase the score by 1
         //this.score++;
         //scoreDisplay.innerText = `${this.score}`;
@@ -156,18 +156,18 @@ class Game {
 
     // Create a new obstacle based on a random probability
     // when there is no other obstacles on the screen
-    if (Math.random() > 0.98 && this.obstacles.length < 4) {
+    if (Math.random() < 0.02 && this.obstacles.length < 5) {
       this.obstacles.push(new Obstacle(this.gameScreen));
     }
 
     // Create a new capsized Kayaker based on a random probability
     // when there is no other capsized Kayaker on the screen
-    if (Math.random() > 0.98 && this.capsizedKayakers.length < 1) {
+    if (Math.random() < 0.01 && this.capsizedKayakers.length < 1) {
       this.capsizedKayakers.push(new CapsizedKayaker(this.gameScreen));
     }
 // Create a new swirl based on a random probability
     // when there is no other capsized Kayaker on the screen
-    if (Math.random() > 0.99 && this.swirls.length < 1) {
+    if (Math.random() < 0.01 && this.swirls.length < 2) {
       this.swirls.push(new Swirl(this.gameScreen));
     }
 

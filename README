@@ -4,11 +4,11 @@
 
 ## Introduction 
 
-I created this game as a project in my third week of an Ironhack Coding Bootcamp in June 2024 in Berlin. The goal was to improve my JavaScript Skills and consolidate what we learned before, with a focus on JavaScript classes, object based programming and DOM manipulation. As a basis, I used the existing Ironhack Lab [Race Car](https://github.com/ironhack-labs/lab-dom-race-car) and modified and enhanced the code to meet my needs.
+I created this game as a project in my third week of an Ironhack Coding Bootcamp in June 2024 in Berlin. The goal was to improve my JavaScript skills and consolidate what we learned before, with a focus on JavaScript classes, object-based programming, and DOM manipulation. As a basis, I used the existing Ironhack Lab [Race Car](https://github.com/ironhack-labs/lab-dom-race-car) and modified and enhanced the code to meet my needs.
 
 ## The Game
 
-The idea of the game is that you are a kayaker paddling on a river. The goal is to help other Kayakers who are capsized and need to be rescued. To make the job more difficult, there are sharks and swirls crowding the water, and upon collision, they will reduce the players lives. Once they are down to zero, it's GAME OVER. If you manage to rescue 6 Kayakers before that, you win.
+The idea of the game is that you are a kayaker paddling on a river. The goal is to help other kayakers who are capsized and need to be rescued. To make the job more difficult, there are sharks and swirls crowding the water, and upon collision, they will reduce the player's lives. Once they are down to zero, it's GAME OVER. If you manage to rescue 6 kayakers before that, you win.
 
 ## Setup
 
@@ -18,7 +18,35 @@ My repository is public on GitHub; if you want to show the code on your desktop,
 -  `cd kayak-wildwater-run-game`
 -  `open index.html`
 
-Or just play it in your Browser via: >> Link is missing <<
+Or just play it in your browser via: >> [Github Pages](https://ole-guacamole.github.io/kayak-wildwater-run-game/) <<
+
+## Technologies Used
+
+- **HTML**: Basic structure and meta tags.
+- **CSS**: External stylesheet for styling the game.
+- **JavaScript**:
+  - DOM manipulation for game elements.
+  - Event handling for user input and game events.
+  - Object-oriented programming using ES6 classes.
+  - Interval and timers for game loop control.
+  - Collision detection algorithms.
+  - Randomization for positioning game elements.
+- **Images**: Various image assets for game graphics.
+
+## Features
+
+- **Player Control**: Use arrow keys to navigate the kayak.
+- **Dynamic Obstacles**: Avoid obstacles that move around the game screen.
+- **Swirls**: Beware of moving swirls that can decrease your lives.
+- **Rescue Mission**: Rescue capsized kayakers to increase your score.
+- **Score and Lives Tracking**: Real-time tracking of your score and lives.
+- **Game States**:
+  - Start screen with game instructions.
+  - Main game screen for gameplay.
+  - End screens for game over and victory conditions.
+- **Game Loop**: Continuous update loop for smooth gameplay.
+- **Victory Condition**: Rescue a set number of kayakers to win.
+- **Game Over Condition**: Game ends when all lives are lost.
 
 ## Team Members
 
