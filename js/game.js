@@ -38,6 +38,7 @@ class Game {
     
   }
 
+  // Loop Method to call the update method 60 times per minute
   gameLoop() {
     this.update();
     if (this.gameIsOver) {
@@ -46,6 +47,12 @@ class Game {
   }
 
   
+  // Update Method to show Movement (update the positions)
+  // Detect collisions
+  // Detect if objects left the GameScreen
+  // update lives and score
+  // Call endGame function if lives are 0 or score reached 6
+
 
   update() {
     this.player.move();
@@ -74,11 +81,9 @@ class Game {
         // Update the counter variable to account for the removed obstacle
      
         i--;
-      } // If the obstacle is off the screen (at the bottom)
+      } // If the obstacle is off the screen (at the bottom/ left side / or right side)
       else if (obstacle.top > this.height || obstacle.left > this.width || obstacle.left < 0) {
-        // Increase the score by 1
-        //this.score++;
-        //scoreDisplay.innerText = `${this.score}`;
+        
         // Remove the obstacle from the DOM
         obstacle.element.remove();
         // Remove obstacle object from the array
@@ -179,7 +184,7 @@ class Game {
   }
 
   if (this.score === 6) {
-    this.endGameReason = "reachedScore";
+    this.endGameReason = "reachedScore"; // Set the reason for game end
     this.endGame();
     
     
@@ -189,14 +194,11 @@ class Game {
 
   endGame() {
     
-  
-    
     this.player.element.remove();
     this.obstacles.forEach((obstacle) => obstacle.element.remove());
     this.obstacles.forEach((obstacle) => obstacle.element.remove());
     this.capsizedKayakers.forEach((kayaker) => kayaker.element.remove());
     this.swirls.forEach((swirl) => swirl.element.remove());
-
     this.gameIsOver = true;
 
     // Hide game screen

@@ -1,7 +1,7 @@
 body {
   padding: 0;
   text-align: center;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
 
@@ -31,20 +31,19 @@ body {
   overflow: hidden;
   position: relative;
   background-image: url(../images/river2.png);
+
   background-size: cover;
-  animation: slide 8s linear infinite;
+  animation: slide 120s linear infinite;
   border-radius: 5px;
 }
 
 @keyframes slide {
   0% {
-    background-position: 0 -800px;
+    background-position: 0 -10000px;
   }
-  95% {
-    background-position: 0 0;
-  }
+
   100% {
-    background-position: 0 80px;
+    background-position: 0 5px;
   }
 }
 
